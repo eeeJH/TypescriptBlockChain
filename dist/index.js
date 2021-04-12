@@ -1,20 +1,15 @@
 "use strict";
-// interface Human {
-//   name: string;
-//   age: number;
-//   gender: string;
 Object.defineProperty(exports, "__esModule", { value: true });
-// }
-class Human {
-    constructor(name, age, gender) {
-        this.name = name;
-        this.age = age;
-        this.gender = gender;
+class Block {
+    constructor(index, hash, preHash, data, timestamp) {
+        this.index = index;
+        this.hash = hash;
+        this.preHash = preHash;
+        this.data = data;
+        this.timestamp = timestamp;
     }
 }
-var lee = new Human("lee", 29, 'male');
-var intro = (person) => {
-    return `Hello, im ${person.name}, im ${person.age}, im a ${person.gender}!`;
-};
-console.log(intro(lee));
+var genesisBlock = new Block(0, "1239182476189274618273", "", "Hi", 12345);
+var blockChain = [genesisBlock];
+console.log(blockChain);
 //# sourceMappingURL=index.js.map

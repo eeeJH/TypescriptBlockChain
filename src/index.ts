@@ -1,29 +1,30 @@
-// interface Human {
-//   name: string;
-//   age: number;
-//   gender: string;
-  
-// }
+class Block {
+    public index: number;
+    public hash: string;
+    public preHash: string;
+    public data: string;
+    public timestamp: number;
 
-class Human {
-    public name: string;
-    public age: number;
-    public gender: string;
-        
-    constructor(name: string, age: number, gender: string) {
-        this.name = name;
-        this.age = age;
-        this.gender = gender;
+    constructor(
+        index: number,
+        hash: string,
+        preHash: string,
+        data: string,
+        timestamp: number
+    ) {
+        this.index = index;
+        this.hash = hash;
+        this.preHash = preHash;
+        this.data = data;
+        this.timestamp = timestamp;
     }
+
 }
 
-var lee = new Human("lee", 29, 'male');
+var genesisBlock: Block = new Block(0, "1239182476189274618273", "", "Hi", 12345);
 
-var intro = (person: Human): string => {
-  return `Hello, im ${person.name}, im ${person.age}, im a ${person.gender}!`;
-};
+var blockChain: [Block] = [genesisBlock];
 
-
-console.log(intro(lee));
+console.log(blockChain);
 
 export {};
